@@ -12,11 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val itemsBuah: ArrayList<Buah> = arrayListOf<Buah>(
-            Buah(urlImage = R.drawable.cherry, namaBuah = "Cherry", hargaBuah =1000),
+        rvBuah = findViewById(R.id.listview_buah)
+
+        var itemsBuah: ArrayList<Buah> = arrayListOf<Buah>(
+            Buah(urlImage = R.drawable.cherry, namaBuah = "Cherry", hargaBuah = 1000),
+            Buah(urlImage = R.drawable.jeruk, namaBuah = "Jeruk", hargaBuah = 2000),
+            Buah(urlImage = R.drawable.nanas, namaBuah = "Nanas", hargaBuah = 4000),
+            Buah(urlImage = R.drawable.pisang, namaBuah = "Pisang", hargaBuah = 6000 ),
         )
 
-        rvBuah = findViewById(R.id.listview_buah)
         rvBuah.setHasFixedSize(true)
         rvBuah.layoutManager = LinearLayoutManager(this)
         val listBuahAdapter = MyAdapter(itemsBuah)

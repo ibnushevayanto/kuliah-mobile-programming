@@ -9,5 +9,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listview_buah"
         android:layout_width="match_parent"
+        tools:listitem="@layout/list_row_buah"
         android:layout_height="match_parent" />
 </LinearLayout>
