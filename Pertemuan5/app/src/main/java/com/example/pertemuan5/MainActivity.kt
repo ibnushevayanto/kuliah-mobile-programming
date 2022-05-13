@@ -2,17 +2,24 @@ package com.example.pertemuan5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.R.layout.simple_list_item_1
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var rvBuah: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val languages = listOf<String>("Java", "Kotlin", "Javascript", "PHP", "Phython", "R", "Ruby", "C++", "C#", "C", "Cobol", "Pascal")
-        val lv_language: ListView = findViewById(R.id.lv_language)
-        lv_language.adapter = ArrayAdapter(this, simple_list_item_1, languages)
+        val itemsBuah: ArrayList<Buah> = arrayListOf<Buah>(
+            Buah(urlImage = R.drawable.cherry, namaBuah = "Cherry", hargaBuah =1000),
+        )
+
+        rvBuah = findViewById(R.id.listview_buah)
+        rvBuah.setHasFixedSize(true)
+        rvBuah.layoutManager = LinearLayoutManager(this)
+        val listBuahAdapter = MyAdapter(itemsBuah)
+        rvBuah.adapter = listBuahAdapter
     }
 }
