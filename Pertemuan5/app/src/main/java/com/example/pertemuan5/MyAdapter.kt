@@ -16,6 +16,8 @@ class MyAdapter (private val items: List<Buah>)
         var imgPhoto: ImageView = itemView.findViewById(R.id.gambarBuah)
     }
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -25,12 +27,24 @@ class MyAdapter (private val items: List<Buah>)
         return ListViewHolder(view)
     }
 
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Buah, index: Int)
+    }
+
     override fun onBindViewHolder(holder: MyAdapter.ListViewHolder, position: Int) {
         val buah = items[position]
 
         holder.imgPhoto.setImageResource(buah.urlImage)
         holder.namaBuah.text = buah.namaBuah
         holder.hargaBuah.text = buah.hargaBuah.toString()
+
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(items[holder.adapterPosition], position)
+        }
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
     }
 
     override fun getItemCount(): Int {

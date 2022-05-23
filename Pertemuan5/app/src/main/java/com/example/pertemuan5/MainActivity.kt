@@ -1,5 +1,6 @@
 package com.example.pertemuan5
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,5 +26,15 @@ class MainActivity : AppCompatActivity() {
         rvBuah.layoutManager = LinearLayoutManager(this)
         val listBuahAdapter = MyAdapter(itemsBuah)
         rvBuah.adapter = listBuahAdapter
+
+        listBuahAdapter.setOnItemClickCallback(object: MyAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Buah, index: Int) {
+                val detailIntent = Intent(this@MainActivity, DetailBuah::class.java)
+                detailIntent.putExtra("nama_buah", itemsBuah[index].namaBuah)
+                detailIntent.putExtra("harga_buah", itemsBuah[index].hargaBuah)
+                detailIntent.putExtra("image", itemsBuah[index].urlImage)
+                startActivity(detailIntent)
+            }
+        } )
     }
 }
