@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "84438682270",
+    "firebase_url": "https://kuliah-mobile-programming-default-rtdb.firebaseio.com",
+    "project_id": "kuliah-mobile-programming",
+    "storage_bucket": "kuliah-mobile-programming.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84438682270:android:5a73772f61663ef229898f",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84438682270-p7pegqm9af7hhirvvlg9vdc0b63jagda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOI35UHJtLQ9dtTeOPLDiGyw1GEyqXZrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84438682270-p7pegqm9af7hhirvvlg9vdc0b63jagda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
